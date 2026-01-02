@@ -1,69 +1,67 @@
 # FlexSystem – Backend API
 
-Backend de un sistema para la gestión de pedidos de **flexibles personalizados**.
-A diferencia de un catálogo tradicional, los productos no están prefabricados, sino que se
-construyen dinámicamente a partir de la selección de componentes.
+Backend system for managing **custom-made flexible products orders**.  
+Unlike a traditional catalog, products are **not prefabricated**, but dynamically built based on selected components.
 
-El sistema está orientado a un entorno **B2B**, donde se asume que el cliente posee conocimientos
-técnicos sobre el producto.
+The system is designed for a **B2B environment**, assuming that clients have technical knowledge about the products they configure.
 
 ---
 
-## Funcionalidades principales
+## Main Features
 
-- Configuración de productos personalizados por componentes
-- Validación técnica y feedback durante la selección
-- Gestión del flujo completo de pedidos
-- Manejo de pagos parciales (señas y saldo pendiente)
-- Seguimiento de entregas
-- API REST estructurada por módulos
-
----
-
-## Arquitectura
-
-El backend está desarrollado con **NestJS**, siguiendo una arquitectura modular
-y separando responsabilidades por dominio:
-
-- `auth`: autenticación y autorización (JWT, roles)
-- `client`: gestión de clientes
-- `dealer`: gestión de distribuidores
-- `supply`: control de insumos y stock
-- `order`: flujo principal del pedido y lógica de negocio
-- `delivery`: gestión de entregas
-- `database`: configuración ORM y conexión a la base de datos
-- `shared`: utilidades y lógica reutilizable
+- Custom product configuration based on components  
+- Technical validation and feedback during product selection  
+- Full order lifecycle management  
+- Partial payments handling (down payment and remaining balance)  
+- Delivery tracking  
+- Modular REST API  
 
 ---
 
-## Base de datos
+## Architecture
 
-- SGBD: **MySQL**
-- Motor de almacenamiento: **InnoDB**
-- ORM: **MikroORM** 
+The backend is built with **NestJS**, following a **modular architecture** and separating responsibilities by domain:
 
-El modelo de datos fue diseñado desde cero, priorizando:
-- Modelado del dominio
-- Relaciones claras entre entidades
-- Separación entre lógica de negocio y persistencia
-
----
-
-## Tecnologías utilizadas
-
-- **Node.js**
-- **NestJS**
-- **TypeScript**
-- **MikroORM**
-- **MySQL (Percona Server)**
-- **JWT**
-- **Docker (nociones básicas)**
+- **auth**: authentication and authorization (JWT, roles)  
+- **client**: client management  
+- **dealer**: distributor management  
+- **supply**: inventory and supplies control  
+- **order**: main order workflow and business logic  
+- **delivery**: delivery management  
+- **database**: ORM configuration and database connection  
+- **shared**: reusable utilities and shared logic  
 
 ---
 
-## Configuración del entorno
+## Database
 
-Crear un archivo `.env` a partir de `.env.example` y configurar las variables necesarias:
+- **DBMS**: MySQL  
+- **Storage Engine**: InnoDB  
+- **ORM**: MikroORM  
+
+The data model was designed from scratch, prioritizing:
+
+- Domain-driven modeling  
+- Clear relationships between entities  
+- Separation between business logic and persistence  
+
+---
+
+## Tech Stack
+
+- Node.js  
+- NestJS  
+- TypeScript  
+- MikroORM  
+- MySQL (Percona Server)  
+- JWT  
+- Docker (basic knowledge)  
+
+---
+
+## Environment Setup
+
+Create a `.env` file based on `.env.example` and configure the required variables:
 
 ```bash
 cp .env.example .env
@@ -71,20 +69,19 @@ cp .env.example .env
 
 ---
 
-## Instalación 
-
+## Installation
 ```bash
 pnpm install
 ```
+
 ---
 
-## Levantar la aplicación
-
+## Run the Application
 ```bash
 pnpm start:dev
 ```
 
-## Documentación técnica
+---
 
-- Modelo de dominio: `docs/domain/domain-model.jpeg`
-
+## Technical Documentation
+Domain Model: `docs/domain/domain-model.jpeg`
